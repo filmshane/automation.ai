@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>automation.ai — Practical Ansible Automation for Linux & Windows Infrastructure</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        
+        .font-display {
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+        }
+
+        .section-header {
+            font-size: 2.1rem;
+            line-height: 2.4rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+        }
+
+        .solution-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .solution-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+
+        .nav-link {
+            transition: color 0.15s ease;
+        }
+        
+        .nav-link:hover {
+            color: #38bdf8;
+        }
+
+        .experience-item {
+            border-left: 3px solid #0ea5e9;
+        }
+
+        /* Logo styles */
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-200">
+
+    <!-- Navbar -->
+    <nav class="bg-slate-900 border-b border-slate-800 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-x-3">
+                    <!-- Inline SVG Logo -->
+                    <svg class="logo-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Cursor / arrow shape -->
+                        <path d="M12 8 L12 36 L22 28 L28 40 L34 37 L28 25 L40 25 Z" fill="#0ea5e9"/>
+                        <!-- Circuit nodes -->
+                        <circle cx="18" cy="14" r="2.2" fill="#2dd4bf"/>
+                        <circle cx="26" cy="18" r="2.2" fill="#2dd4bf"/>
+                        <circle cx="22" cy="24" r="2.2" fill="#2dd4bf"/>
+                        <!-- Connecting lines -->
+                        <path d="M18 14 L26 18 L22 24" stroke="#2dd4bf" stroke-width="1.5" fill="none"/>
+                        <!-- Small gear -->
+                        <circle cx="34" cy="14" r="5" stroke="#2dd4bf" stroke-width="1.8" fill="none"/>
+                        <circle cx="34" cy="14" r="1.8" fill="#2dd4bf"/>
+                    </svg>
+                    <span class="font-display text-2xl font-semibold tracking-tighter">automation.ai</span>
+                </div>
+                
+                <div class="hidden md:flex items-center gap-x-7 text-sm">
+                    <a href="#solutions" class="nav-link text-slate-300">Solutions</a>
+                    <a href="#approach" class="nav-link text-slate-300">Our Approach</a>
+                    <a href="#how" class="nav-link text-slate-300">How It Works</a>
+                </div>
+                
+                <div class="flex items-center gap-x-3">
+                    <a href="#book" class="hidden sm:block px-4 py-2 text-sm font-medium border border-slate-700 hover:bg-slate-900 rounded-xl transition-colors">
+                        Book a Call
+                    </a>
+                    <a href="#book" class="px-5 py-2 text-sm font-medium bg-white text-slate-950 hover:bg-slate-100 rounded-xl transition-colors">
+                        Get Started
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <div class="max-w-5xl mx-auto px-6 pt-16 pb-12 text-center">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-display font-semibold tracking-tighter leading-tight mb-6">
+            Reduce repetitive work on Linux and Windows infrastructure.<br class="hidden sm:block">
+            Improve consistency and audit readiness.
+        </h1>
+        
+        <p class="max-w-2xl mx-auto text-lg text-slate-400 mb-3">
+            Production-ready Ansible automation built from <span class="text-slate-200 font-medium">30+ years</span> of hands-on experience managing large-scale enterprise environments.
+        </p>
+        <p class="max-w-xl mx-auto text-base text-slate-500 mb-9">
+            Practical roles and playbooks designed for real production use — not theoretical examples.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+            <a href="#book" 
+               class="px-8 py-3.5 text-base font-semibold bg-white text-slate-950 hover:bg-slate-100 rounded-2xl transition-all inline-flex items-center justify-center gap-x-2">
+                Schedule a 30-Minute Discovery Call
+            </a>
+            <a href="#solutions" 
+               class="px-8 py-3.5 text-base font-medium border border-slate-700 hover:bg-slate-900 rounded-2xl transition-all inline-flex items-center justify-center gap-x-2">
+                Explore Solutions
+            </a>
+        </div>
+        
+        <div class="mt-5 text-sm text-slate-500">
+            <a href="mailto:shane.a.miller@live.com?subject=Free%20Automation%20Opportunity%20Checklist" class="underline hover:text-sky-400 transition-colors">
+                Request the free Automation Opportunity Checklist
+            </a>
+        </div>
+    </div>
+
+    <!-- Trust bar -->
+    <div class="max-w-5xl mx-auto px-6 pb-12">
+        <div class="text-center text-xs uppercase tracking-widest text-slate-500 mb-4">Built from real production experience at</div>
+        <div class="flex flex-wrap justify-center items-center gap-x-10 gap-y-3 text-sm text-slate-400 font-medium">
+            <div>Jack in the Box</div>
+            <div>Disney</div>
+            <div>DreamWorks Animation</div>
+            <div>Qualcomm</div>
+            <div>Forever 21</div>
+        </div>
+        <div class="text-center text-xs text-slate-600 mt-4">
+            30+ years across retail, entertainment, telecommunications, and healthcare
+        </div>
+    </div>
+
+    <!-- Challenges -->
+    <div class="bg-slate-900 border-y border-slate-800 py-14">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-10">
+                <h2 class="section-header">Common challenges teams face with infrastructure tasks</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-5">
+                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800">
+                    <div class="font-medium mb-2">Patching and update cycles</div>
+                    <div class="text-sm text-slate-400 leading-relaxed">Manual or semi-manual patching across mixed Linux and Windows fleets consumes significant time, with limited tracking of changes and higher risk of oversights.</div>
+                </div>
+                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800">
+                    <div class="font-medium mb-2">Compliance and audit preparation</div>
+                    <div class="text-sm text-slate-400 leading-relaxed">Gathering consistent evidence of configurations, patching history, and security baselines often becomes time-intensive and stressful during audits.</div>
+                </div>
+                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800">
+                    <div class="font-medium mb-2">Repetitive access and configuration work</div>
+                    <div class="text-sm text-slate-400 leading-relaxed">User onboarding/offboarding, certificate renewals, hardening, and routine maintenance frequently involve manual steps that vary between systems.</div>
+                </div>
+            </div>
+            
+            <div class="mt-8 text-center text-sm text-slate-500 max-w-lg mx-auto">
+                These issues appear regularly in discussions of sysadmin and IT operations challenges, including pressures around compliance, hybrid environments, and limited resources.
+            </div>
+        </div>
+    </div>
+
+    <!-- Solutions -->
+    <div id="solutions" class="max-w-6xl mx-auto px-6 pt-16 pb-10">
+        <div class="text-center mb-10">
+            <h2 class="section-header">Automation approaches for recurring tasks</h2>
+            <p class="text-slate-400 mt-3 max-w-xl mx-auto">Modular, reusable Ansible roles and playbooks developed for real production environments.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            
+            <!-- Featured: Intelligent Patching -->
+            <div class="solution-card bg-slate-900 border border-sky-800/60 rounded-3xl p-6 col-span-1 md:col-span-2 lg:col-span-1 relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-sky-500/10 text-sky-400 text-[10px] font-medium px-3 py-1 rounded-bl-xl">Most Requested</div>
+                <div class="flex items-center gap-x-3 mb-4">
+                    <i class="fa-solid fa-sync text-xl text-sky-400"></i>
+                    <h3 class="font-semibold text-lg">Intelligent Patching</h3>
+                </div>
+                <p class="text-sm text-slate-400 mb-4">Structured patching workflows with safety checks, detailed change tracking, and reporting for Linux and Windows.</p>
+                
+                <div class="text-xs text-slate-400 space-y-2 mb-4">
+                    <div class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5 w-3.5"></i> <span>Pre-checks (disk space, load, services, reboot flag) and post-checks</span></div>
+                    <div class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5 w-3.5"></i> <span>Package change tracking using facts before/after and transaction history</span></div>
+                    <div class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5 w-3.5"></i> <span>Scheduled reminders and rich reports (hostname, package versions, duration, reboot status)</span></div>
+                    <div class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5 w-3.5"></i> <span>Rolling updates, max failure handling, and safe reboot orchestration</span></div>
+                    <div class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5 w-3.5"></i> <span>Security-only or full updates • Idempotent • Check mode support</span></div>
+                    <div class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5 w-3.5"></i> <span>Centralized reports and optional AWX / orchestration integration</span></div>
+                </div>
+                <div class="text-[11px] text-sky-400/90">Designed to reduce manual effort and improve audit trails for patching activities.</div>
+            </div>
+
+            <div class="solution-card bg-slate-900 border border-slate-800 rounded-3xl p-6">
+                <div class="flex items-center gap-x-3 mb-3">
+                    <i class="fa-solid fa-users text-xl text-sky-400"></i>
+                    <h3 class="font-semibold">User Onboarding & Offboarding</h3>
+                </div>
+                <p class="text-sm text-slate-400 leading-relaxed">Automated creation and removal of users, home directories, SSH keys, sudo access, and groups — with options for Active Directory / directory service integration.</p>
+            </div>
+
+            <div class="solution-card bg-slate-900 border border-slate-800 rounded-3xl p-6">
+                <div class="flex items-center gap-x-3 mb-3">
+                    <i class="fa-solid fa-lock text-xl text-sky-400"></i>
+                    <h3 class="font-semibold">SSL Certificate Lifecycle</h3>
+                </div>
+                <p class="text-sm text-slate-400 leading-relaxed">Renewal, deployment, and validation for common web services, with tracking to reduce expired-certificate incidents.</p>
+            </div>
+
+            <div class="solution-card bg-slate-900 border border-slate-800 rounded-3xl p-6">
+                <div class="flex items-center gap-x-3 mb-3">
+                    <i class="fa-solid fa-shield-halved text-xl text-sky-400"></i>
+                    <h3 class="font-semibold">Security & Compliance Hardening</h3>
+                </div>
+                <p class="text-sm text-slate-400 leading-relaxed">Application of security baselines (including CIS-oriented controls) with checks for ongoing consistency and drift detection.</p>
+            </div>
+
+            <div class="solution-card bg-slate-900 border border-slate-800 rounded-3xl p-6">
+                <div class="flex items-center gap-x-3 mb-3">
+                    <i class="fa-solid fa-database text-xl text-sky-400"></i>
+                    <h3 class="font-semibold">Backup & DR Testing</h3>
+                </div>
+                <p class="text-sm text-slate-400 leading-relaxed">Automation for backup verification and scripted disaster recovery testing exercises to improve confidence in recovery processes.</p>
+            </div>
+
+            <div class="solution-card bg-slate-900 border border-slate-800 rounded-3xl p-6">
+                <div class="flex items-center gap-x-3 mb-3">
+                    <i class="fa-solid fa-server text-xl text-sky-400"></i>
+                    <h3 class="font-semibold">Golden Image & Provisioning</h3>
+                </div>
+                <p class="text-sm text-slate-400 leading-relaxed">Standardized, hardened server images combined with automated provisioning for consistent, repeatable deployments across environments.</p>
+            </div>
+
+            <div class="solution-card bg-slate-900 border border-slate-800 rounded-3xl p-6">
+                <div class="flex items-center gap-x-3 mb-3">
+                    <i class="fa-solid fa-key text-xl text-sky-400"></i>
+                    <h3 class="font-semibold">Credential & Secrets Rotation</h3>
+                </div>
+                <p class="text-sm text-slate-400 leading-relaxed">Regular, controlled rotation of passwords, SSH keys, and service credentials across systems with logging.</p>
+            </div>
+
+            <div class="solution-card bg-slate-900 border border-slate-800 rounded-3xl p-6">
+                <div class="flex items-center gap-x-3 mb-3">
+                    <i class="fa-solid fa-clipboard-check text-xl text-sky-400"></i>
+                    <h3 class="font-semibold">Continuous Compliance & Drift Detection</h3>
+                </div>
+                <p class="text-sm text-slate-400 leading-relaxed">Monitoring for configuration changes with reporting and options for alignment back to defined standards.</p>
+            </div>
+
+            <div class="solution-card bg-slate-900 border border-slate-800 rounded-3xl p-6">
+                <div class="flex items-center gap-x-3 mb-3">
+                    <i class="fa-solid fa-file-lines text-xl text-sky-400"></i>
+                    <h3 class="font-semibold">Log & Disk Management</h3>
+                </div>
+                <p class="text-sm text-slate-400 leading-relaxed">Log rotation, cleanup routines, disk space monitoring, and alerting to reduce reactive firefighting.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Patching Deep Dive -->
+    <div class="max-w-5xl mx-auto px-6 py-10 bg-slate-900 border-y border-slate-800">
+        <div class="max-w-3xl mx-auto">
+            <h3 class="font-semibold text-lg mb-4">Patching automation details</h3>
+            <div class="text-sm text-slate-300 space-y-4">
+                <p>Approaches are structured around reusable components for better maintainability and reliability:</p>
+                
+                <div class="grid md:grid-cols-2 gap-6 text-xs">
+                    <div>
+                        <div class="font-medium text-slate-200 mb-2">Key components typically included</div>
+                        <ul class="space-y-1.5 text-slate-400">
+                            <li>• Pre-checks: disk, load, services, AD connectivity</li>
+                            <li>• Patching logic using native package modules across distros</li>
+                            <li>• Post-checks: service status and change verification</li>
+                            <li>• Reporting: structured diffs of package changes</li>
+                            <li>• Notifications: scheduled reminders and detailed results</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="font-medium text-slate-200 mb-2">Reliability practices</div>
+                        <ul class="space-y-1.5 text-slate-400">
+                            <li>• Rolling updates and configurable failure thresholds</li>
+                            <li>• Security-only vs. full update options</li>
+                            <li>• Proper reboot handling and verification</li>
+                            <li>• Centralized logging and audit reports</li>
+                            <li>• Idempotent design with check mode support</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="text-xs text-slate-500">Organizations using structured automation for patching commonly report meaningful reductions in manual effort and improved consistency. Orchestration options (such as AWX) can add scheduling, approvals, and dashboards where needed.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Our Approach -->
+    <div id="approach" class="max-w-5xl mx-auto px-6 py-16">
+        <div class="grid md:grid-cols-5 gap-10">
+            <div class="md:col-span-2">
+                <h2 class="section-header">Approaches developed from extensive production experience</h2>
+                <p class="mt-4 text-slate-400 text-sm leading-relaxed">These solutions draw from direct work designing and operating automation in complex, large-scale environments — not from theory or greenfield projects.</p>
+            </div>
+            
+            <div class="md:col-span-3 space-y-6 text-sm">
+                <div class="experience-item pl-5">
+                    <div class="font-medium">Full automation frameworks for provisioning and configuration</div>
+                    <div class="text-slate-400 mt-1 leading-relaxed">Architected and implemented end-to-end automation using Ansible and Terraform for server provisioning, networking, security standards, and directory integration in both cloud and on-premises settings.</div>
+                </div>
+                
+                <div class="experience-item pl-5">
+                    <div class="font-medium">Standardized images and repeatable deployments</div>
+                    <div class="text-slate-400 mt-1 leading-relaxed">Developed hardened server images meeting corporate security and compliance requirements, along with automated processes to support consistent deployments at scale.</div>
+                </div>
+                
+                <div class="experience-item pl-5">
+                    <div class="font-medium">Large-scale operations and reliability practices</div>
+                    <div class="text-slate-400 mt-1 leading-relaxed">Operated environments with over 1,600 servers, including compute clusters, storage systems, and high-availability setups, while leading disaster recovery exercises.</div>
+                </div>
+                
+                <div class="experience-item pl-5">
+                    <div class="font-medium">Cross-platform, security, and compliance work</div>
+                    <div class="text-slate-400 mt-1 leading-relaxed">Managed mixed Linux and Windows infrastructures, SAN environments, certificate processes, security hardening, migrations, and compliance activities across multiple industries.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Benefits -->
+    <div class="max-w-5xl mx-auto px-6 py-10">
+        <h2 class="section-header text-center mb-8">Typical outcomes teams look for</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5 text-sm">
+            <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl">
+                <div class="font-medium mb-1">More consistent results</div>
+                <div class="text-slate-400">Standardized processes help reduce the variation that commonly occurs with manual steps.</div>
+            </div>
+            <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl">
+                <div class="font-medium mb-1">Improved visibility and records</div>
+                <div class="text-slate-400">Structured reporting and change history support troubleshooting and compliance activities.</div>
+            </div>
+            <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl">
+                <div class="font-medium mb-1">Time available for higher-value work</div>
+                <div class="text-slate-400">Reduce time spent on routine, repetitive infrastructure tasks.</div>
+            </div>
+            <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl">
+                <div class="font-medium mb-1">Lower risk of common oversights</div>
+                <div class="text-slate-400">Checks and repeatable steps help avoid issues that arise in purely manual processes.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- How It Works -->
+    <div id="how" class="max-w-4xl mx-auto px-6 py-14 border-t border-slate-800">
+        <h2 class="section-header text-center mb-10">A typical engagement path</h2>
+        
+        <div class="space-y-5 max-w-2xl mx-auto">
+            <div class="flex gap-5 bg-slate-900 border border-slate-800 p-6 rounded-2xl items-start">
+                <div class="w-8 h-8 bg-slate-800 text-sm flex items-center justify-center rounded-lg font-semibold mt-0.5 shrink-0">1</div>
+                <div>
+                    <div class="font-medium text-base">Discovery conversation</div>
+                    <div class="text-sm text-slate-400 mt-1">A focused discussion of current processes, pain points, and goals for your environment.</div>
+                </div>
+            </div>
+            
+            <div class="flex gap-5 bg-slate-900 border border-slate-800 p-6 rounded-2xl items-start">
+                <div class="w-8 h-8 bg-slate-800 text-sm flex items-center justify-center rounded-lg font-semibold mt-0.5 shrink-0">2</div>
+                <div>
+                    <div class="font-medium text-base">Review of relevant options</div>
+                    <div class="text-sm text-slate-400 mt-1">Identification of approaches that align with the environment and priorities discussed.</div>
+                </div>
+            </div>
+            
+            <div class="flex gap-5 bg-slate-900 border border-slate-800 p-6 rounded-2xl items-start">
+                <div class="w-8 h-8 bg-slate-800 text-sm flex items-center justify-center rounded-lg font-semibold mt-0.5 shrink-0">3</div>
+                <div>
+                    <div class="font-medium text-base">Delivery and next steps</div>
+                    <div class="text-sm text-slate-400 mt-1">Provision of well-documented playbooks and supporting materials, with optional hands-on assistance during implementation.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Final CTA -->
+    <div id="book" class="max-w-3xl mx-auto px-6 pb-20">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8 md:p-12 text-center">
+            <h2 class="text-2xl md:text-3xl font-semibold tracking-tight mb-3">Let’s discuss your environment</h2>
+            <p class="text-slate-400 max-w-md mx-auto text-sm leading-relaxed">
+                A short, no-pressure conversation to understand current tasks and explore whether any of these approaches may be relevant for your team.
+            </p>
+            
+            <div class="mt-8 space-y-4">
+                <a href="mailto:shane.a.miller@live.com?subject=automation.ai%20Discovery%20Call" 
+                   class="inline-block px-9 py-3.5 bg-white text-slate-950 font-semibold rounded-2xl text-base hover:bg-slate-100 transition-colors">
+                    Schedule a 30-Minute Discovery Call
+                </a>
+                
+                <div class="text-sm">
+                    <a href="mailto:shane.a.miller@live.com?subject=Free%20Automation%20Opportunity%20Checklist" class="text-sky-400 hover:underline">
+                        Or request the free Automation Opportunity Checklist
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-6 text-xs text-slate-500">
+                Direct email: <a href="mailto:shane.a.miller@live.com" class="underline hover:text-slate-300">shane.a.miller@live.com</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 py-8">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+            <div class="flex items-center gap-x-2">
+                <svg class="w-5 h-5" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 8 L12 36 L22 28 L28 40 L34 37 L28 25 L40 25 Z" fill="#0ea5e9"/>
+                    <circle cx="18" cy="14" r="2.2" fill="#2dd4bf"/>
+                    <circle cx="26" cy="18" r="2.2" fill="#2dd4bf"/>
+                    <circle cx="22" cy="24" r="2.2" fill="#2dd4bf"/>
+                    <path d="M18 14 L26 18 L22 24" stroke="#2dd4bf" stroke-width="1.5" fill="none"/>
+                    <circle cx="34" cy="14" r="5" stroke="#2dd4bf" stroke-width="1.8" fill="none"/>
+                    <circle cx="34" cy="14" r="1.8" fill="#2dd4bf"/>
+                </svg>
+                <span class="font-display font-medium text-slate-400">automation.ai</span>
+            </div>
+            <div class="text-center sm:text-right">
+                Practical Ansible automation from 30+ years of enterprise Linux experience
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
